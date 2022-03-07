@@ -74,9 +74,11 @@ public class LoginPage extends PageBase {
     List<String> disqualified = new ArrayList<>();
 
     public void loginToInstagram() throws IOException {
-        String passwordMisterekqa = "keine7gnade7!";
+        String pword = System.getenv("INSTAGRAM_PASSWORD");
+        String pwordMisterekQa = System.getenv("INSTAGRAM_PASSWORD_MISTEREKQA");
         typeText(username, "ellasminipancakes");
-        typeText(password, "disney15");
+        typeText(password, pword);
+
 
         click(login);
         delayFor(3000);
