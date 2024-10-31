@@ -1,4 +1,4 @@
-# Selenium UI Automation Tests - AbleTo_UI
+# Selenium UI Automation Tests - 
 This project supports automated UI testing using PageObject and DataDriven Framework.The README file is not finalized yet.
 
 ## Following tools were used in this framework:
