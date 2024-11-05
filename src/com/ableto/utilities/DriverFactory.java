@@ -56,14 +56,14 @@ public class DriverFactory {
 		}
 
 		if (browserName.equalsIgnoreCase("chrome")) {
-			ChromeDriverManager.chromedriver().setup();
+			ChromeDriverManager.chromedriver().browserVersion("latest").setup();
 			ChromeOptions options = new ChromeOptions();
-			if(getOperatingSystem().toLowerCase().equals("linux")) {
-				options.setHeadless(true);
-			}
+//			if(getOperatingSystem().toLowerCase().equals("linux")) {
+//				options.setHeadless(true);
+//			}
 			options.addArguments("--window-size=1920,1080");
 			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Mobile Safari/537.36 Edge/12.10166");
+			//options.addArguments("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Mobile Safari/537.36 Edge/12.10166");
 			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.addArguments("--disable-blink-features=AutomationControlled");

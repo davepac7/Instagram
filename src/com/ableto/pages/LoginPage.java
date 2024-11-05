@@ -24,16 +24,16 @@ public class LoginPage extends PageBase {
     @FindBy(xpath = "//button[text()='Log In']")
     public WebElement loginNoApp;
 
-    @FindBy(css = "input[name='username']")
+    @FindBy(css = "input[aria-label='Phone number, username, or email']")
     public WebElement username;
 
-    @FindBy(css = "input[name='password']")
+    @FindBy(css = "input[aria-label='Password']")
     public WebElement password;
 
-    @FindBy(xpath = "//div[text()='Log In']")
+    @FindBy(xpath = "//div[text()='Log in']")
     public WebElement login;
 
-    @FindBy(xpath = "//button[text()='Not Now']")
+    @FindBy(xpath = "//div[text()='Not now']")
     public WebElement notNow;
 
     @FindBy(xpath = "//button[text()='Cancel']")
@@ -74,10 +74,11 @@ public class LoginPage extends PageBase {
     List<String> disqualified = new ArrayList<>();
 
     public void loginToInstagram() throws IOException {
-        String pword = System.getenv("INSTAGRAM_PASSWORD");
+        System.getenv("INSTAGRAM_PASSWORD");
+
         String pwordMisterekQa = System.getenv("INSTAGRAM_PASSWORD_MISTEREKQA");
         typeText(username, "ellasminipancakes");
-        typeText(password, pword);
+        typeText(password, pwordMisterekQa);
 
 
         click(login);
@@ -100,6 +101,7 @@ public class LoginPage extends PageBase {
 //			}
 //		});
         By orlandoFlorida = By.xpath("//a[@href='/explore/locations/212971112/orlando-florida/']");
+       // By orlandoFlorida = By.xpath("//main/div/following-sibling::div/a[@role='link']");
         //scrollToElement(driver.findElement(orlandoFlorida));
         jsClick(driver.findElement(orlandoFlorida));
         delayFor(5000);
@@ -110,18 +112,19 @@ public class LoginPage extends PageBase {
 
 
     public List<WebElement> getOrlandoResults() {
-        By orlandoResults = By.xpath("//h2/following-sibling::div//a");
+        By orlandoResults = By.xpath("//article/following-sibling::div//a");
         return driver.findElements(orlandoResults);
     }
 
     public void iterateOverInfluencers() throws IOException {
 
 
-        By profile = By.xpath("//header/div/following-sibling::div//a");
+        By profile = By.xpath("//article/div/following-sibling::div//a");
         By followers = By.xpath("//a[contains(., 'followers')]");
         delayFor(8000);
 
         List<WebElement> orlandoList = getOrlandoResults();
+        System.out.println(orlandoList.size());
 
         List<String> uniqueInfluencersInOrlandoList = new ArrayList<>();
 

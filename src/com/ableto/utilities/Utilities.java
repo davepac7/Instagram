@@ -39,6 +39,7 @@ public class Utilities {
     public static Robot robot;
     public Faker faker = new Faker();
     public LogBuilder logBuilder = new LogBuilder();
+    public int time;
 
     protected JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -151,12 +152,12 @@ public class Utilities {
     }
 
     public static void explicitWaitClickable(WebElement element, int time) {
-        WebDriverWait wait = new WebDriverWait(DriverFactory.getInstance().getDriver(), time);
+        WebDriverWait wait = new WebDriverWait(DriverFactory.getInstance().getDriver(),Duration.ofSeconds(time));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void explicitWaitVisibility(WebElement element, int time) {
-        WebDriverWait wait = new WebDriverWait(driver, time);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -207,7 +208,7 @@ public class Utilities {
 
     public void waitForPageLoad() {
 
-        Wait<WebDriver> wait = new WebDriverWait(driver, 30);
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(new Function<WebDriver, Boolean>() {
             public Boolean apply(WebDriver driver) {
                 logBuilder.info("Current Window State       : "
@@ -221,18 +222,18 @@ public class Utilities {
 
     public void WaitForModal()
     {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         boolean waitUntil = wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//Div")));
     }
 
     public void explicitWaitForWindows(int numberOfWindows) {
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.numberOfWindowsToBe(numberOfWindows));
     }
 
     public static boolean explicitWaitVisible(WebDriver driver, WebElement element, int time) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, time);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e) {
             return false;
@@ -343,7 +344,7 @@ public class Utilities {
 
     public void switchToWindow(int noOfWindows) {
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 20);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             wait.until(ExpectedConditions.numberOfWindowsToBe(noOfWindows));
             for (String windowHandle : driver.getWindowHandles()) {
                 win.add(windowHandle);

@@ -9,13 +9,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import static com.ableto.base.BaseTest.xlPath;
 
 public class PageBase extends Utilities {
-
-	static final Integer DEFAULT_TIMEOUT = Integer.parseInt(System.getProperty("selenium.defaultTimeout", "5"));
 
 	//public Properties prop = new Properties();
 	protected LogBuilder logBuilder = new LogBuilder();
@@ -28,7 +27,7 @@ public class PageBase extends Utilities {
 
 	public boolean isPageReady() {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 			wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState")
 					.equals("complete"));
 		} catch (WebDriverException e) {
