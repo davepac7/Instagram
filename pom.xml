@@ -5,15 +5,15 @@
     <version>0.0.1-SNAPSHOT</version>
 <!--    <parent>-->
 <!--        <artifactId>CucumberAPIFramework</artifactId>-->
-        <groupId>claims-admin</groupId>
+        <groupId>instagram-test</groupId>
 <!--        <version>0.0.1-SNAPSHOT</version>-->
 <!--    </parent>-->
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>claims-admin-ui-tests</artifactId>
+    <artifactId>instagram-ui-tests</artifactId>
 
     <properties>
-        <suite>rcm-rc</suite>
+        <suite>main</suite>
         <java.version>1.20</java.version>
         <maven-compiler.version>3.13.0</maven-compiler.version>
         <maven-surefire.version>3.0.0-M5</maven-surefire.version>
