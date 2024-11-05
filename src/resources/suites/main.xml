@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Rcm" parallel="classes" thread-count="1">
+<suite name="instagram" parallel="classes" thread-count="1">
 
     <test name="SmokeSuiteTest">
-        <parameter name="browserName" value="chrome"/>
-        <parameter name="env" value="rc"/>
+        <parameter name="browserName" value="firefox"/>
         <groups>
             <run>
-                <include name="rcm"></include>
+                <include name="instagram"></include>
             </run>
         </groups>
 
         <packages>
-            <package name="com.ableto.scripts.*"></package>
+            <package name="com.instagram.scripts.*"></package>
         </packages>
     </test>
 </suite>

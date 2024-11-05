@@ -1,4 +1,4 @@
-package com.ableto.utilities;
+package com.instagram.utilities;
 
 import org.jboss.aerogear.security.otp.Totp;
 

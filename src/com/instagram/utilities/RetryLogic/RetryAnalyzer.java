@@ -1,4 +1,4 @@
-package com.ableto.utilities.RetryLogic;
+package com.instagram.utilities.RetryLogic;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

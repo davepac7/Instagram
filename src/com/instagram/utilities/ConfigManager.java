@@ -1,4 +1,4 @@
-package com.ableto.utilities;
+package com.instagram.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;

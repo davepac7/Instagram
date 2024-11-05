@@ -1,11 +1,9 @@
-package com.ableto.utilities;
+package com.instagram.utilities;
 
 import com.github.javafaker.Faker;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 import java.awt.*;
@@ -482,11 +480,6 @@ public class Utilities {
         ZoneId zId = now.getZone();
         ZoneRules zoneRules = zId.getRules();
         return zoneRules.isDaylightSavings(now.toInstant());
-    }
-
-    public static String getImportLeadURL(String env) {
-        env = env.equalsIgnoreCase("stg") ? "en.stg" : env.equalsIgnoreCase("rc") ? "en.rc" : "en.dev";
-        return Constants.IMPORT_LEAD_URL.replace("REPLACE", env.trim());
     }
 
     public void openNewTabWithUrl(int tabIndex, String url) {

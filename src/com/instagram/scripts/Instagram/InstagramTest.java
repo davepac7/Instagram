@@ -1,7 +1,7 @@
-package com.ableto.scripts.claimsAdminUi;
+package com.instagram.scripts.Instagram;
 
-import com.ableto.base.BaseTest;
-import com.ableto.utilities.ExtentReporter;
+import com.instagram.base.BaseTest;
+import com.instagram.utilities.ExtentReporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -12,9 +12,10 @@ import java.io.IOException;
 @Listeners(ExtentReporter.class)
 public class InstagramTest extends BaseTest {
 
-    @Test()
+    @Test(groups = {"instagram"})
     public void login() throws IOException {
         loginPage.loginToInstagram();
+        mainPage.searchForInfluencers();
     }
 
 

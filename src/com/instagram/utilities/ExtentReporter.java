@@ -1,4 +1,4 @@
-package com.ableto.utilities;
+package com.instagram.utilities;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import com.ableto.base.BaseTest;
+import com.instagram.base.BaseTest;
 
 
 public class ExtentReporter extends BaseTest implements ITestListener {

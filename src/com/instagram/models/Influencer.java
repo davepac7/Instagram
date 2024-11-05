@@ -1,4 +1,4 @@
-package com.ableto.models;
+package com.instagram.models;
 
 public class Influencer {
     public String getInfluencerName() {

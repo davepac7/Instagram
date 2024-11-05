@@ -1,4 +1,4 @@
-package com.ableto.utilities.RetryLogic;
+package com.instagram.utilities.RetryLogic;
 
 import org.testng.IAnnotationTransformer;
 import org.testng.annotations.ITestAnnotation;
