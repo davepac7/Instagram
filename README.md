@@ -1,5 +1,5 @@
-# Selenium UI Automation Tests - AbleTo_UI
-This project supports automated UI testing using PageObject and DataDriven Framework.The README file is not finalized yet.
+# Selenium UI Automation Tests 
+This UI automation script finds Instagram influencers currently in a locale of your choice and sends them a message.
 
 ## Following tools were used in this framework:
 Maven, TestNG, Selenium WebDriver, WebDriver Extensions, Log4j, Maven Surefire Plugin(for parallel tests execution), Maven Compiler Plugin, Apache POI, Hamcrest library (for assertion), BrowserStack. All automation is done in Java.
